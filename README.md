@@ -1,42 +1,37 @@
 # LSE_DA_COVID_analysis
-LSE DA Course 2 Assignment
+LSE DA Course 2 Assignment's Summary
+Summary of the work I have been doing for the main assignment, the details can be found in the Word document.
 
-200 words: describe 
+Week 1:
+I created a GitHub repository.
 
-Did you notice anything interesting about the data? 
+Week 2:
+Import and assess the data types, columns, rows, and missing values.
+I have created subsections to better handle the amount of data (see Gibraltar). I have filtered and displayed the data.
+I have subset the Gibraltar DataFrame with relevant columns and run the describe() function.
 
-For inland UK we have data just for Moffat in Scotland in both data frames, which also present values equal to zero for intermediate region code and the recovered and hospitalised last entries. With print(cov.info()) I notice that Deaths, Cases, Recovered, and Hospitalised are missing 2 rows of data and those should be the Bermuda’s values which we are going to explore further. 
+Week 3:
+I have merged the cov and vac DataFrames and wrangled the data.
+I viewed and determined data types as well as columns and rows.
+Converted the Date type to DateTime from object and dropped unnecessary columns.
+To determine the number of cases across the UK, I have used the groupby() and aggregate() functions to calculate differences between the application of the first and second dose.
+I then have determined: Which Province/State has the highest number of individuals who have received a first dose but not a second dose?
+Which Province/State has the highest percentage of individuals who have received a first dose but not a second dose?
+How has the number of vaccinated individuals and individuals who have received the first and second doses, changed over time?
 
-With cov.describe() why does it show e+01 ate the end? Why Q1 is zero for Deaths and Recovered? 
- 
+Week 4:
+I have added a column with the difference per region for the sum of first doses minus the sum of the second doses. Then, I calculated the ratioto obtain the number of individuals eligible for the second dose as a percentage.
+I then plotted a vertical bar graph to display the percentage for the first dose to fully-dosed individuals while also adding distinct tick labels to the barplot to make it easier for the audience to read the plot.
+I have saved this visualisation in an exported and shareable format (PNG).
+I have grouped the data by Province/State and Date, and aggregated the death count to create a lineplot to display the trend of deaths across all regions over time.
+I determined which Province/State causes the data set to be skewed and excluded it.
+I converted Date into Months and plotted the same line graph as previously and saved this visualisation in an exported and shareable format (PNG).
+I did the same for the recovered and created a lineplot which I then exported.
 
-With print(vac.describe()) I notice that I get the minum, Q1, and Q2 as 0 for Vaccinated, First, and Second doses. This could happen because considering the change over time for vac we see that the vaccinations took place well after cases started (e.g. in Anguilla they started from 11/01/2021). 
+Week 5:
+Imported, read, and printed the tweet dataframe.
+Created a new df to determine the hashtags and the top trending hashtags.
+Created a visualisaion.
 
-I also noticed that Saint Helena, Ascension, and Tristan de Cunha are under Subregion Name “Northern Europe” and under “Other” in UK we have data only for Moffat in Scotland.  
-
-The value counts for cov[‘Lat’] are only 632, and vac[‘First Dose’} gives me a length of only 3206 and row zero didplayd a value of 4284. As this function does not show the frequency of NaN values I suppose there are missing values 
-
-Does the DataFrame have a default index?  
-Yes, the Dataframe has a default index: the columns names. 
-
- 
-
-What are some of the initial insights you've discovered? 
-I have calculated the IQR, lower and upper limit, and the calculated range for Cases, Deaths, Recovered, and Hospitalised. 
-
- 
-
-How has the number of vaccinated individuals changed over time? What might these changes indicate? Include reasons to support your rationale. 
-In cov we first notice that we start with hospitalisations and then the other values raise too (see the case of Anguilla). Bermuda records the first case in 19/03/2021 and every other country presents its own peculiarities. 
-
- 
-
-On which date(s) are there values missing, and from which columns and rows are these values missing? Which states or provinces do the missing values belong to? 
-
-There are 2 Nan values in the cov DataFrame (in the Province/State Bermuda) which I shall replace at row 875 and 876 on 21st and 22nd September 2020.  
-
-Is there anything unusual about the filtered Gilbraltar DataFrame? Include reasons to support your rationale.  
-
-First deaths by COVID-19 start and then cases as it would be like if there wasn’t an established method to record or check positive cases? 
-
-Deaths, Cases, Recovered, and Hospitalisations are cumulative and there are more Hospitalisations than cases from row 4050 to 4167, after that Hospitalisations reduce abruptly, then raise again. We also have two zero values for Recovered and Hospitalised in the last 2 rows. 
+Week 6:
+Performed predictive analysis through time-series forecast, answered to the additional questions and proposed effective solutions to the stakeholder.
